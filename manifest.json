@@ -1,6 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Gitlab: Are you sure you want to merge this request?",
+  "name": "Are you sure you want to merge this request?",
   "description": "Extension to prevent unwanted clicks on MERGE button at Gitlab merge requests :)",
   "version": "1.0",
+  "content_scripts": [{
+    "js": ["script.js"],
+    "matches": ["*gitlab*/merge_requests/*"]
+  }]
 }
