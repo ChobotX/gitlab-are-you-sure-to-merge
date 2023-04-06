@@ -1,10 +1,22 @@
 {
-  "manifest_version": 3,
-  "name": "Are you sure you want to merge this request?",
-  "description": "Extension to prevent unwanted clicks on MERGE button at Gitlab merge requests :)",
-  "version": "1.0",
-  "content_scripts": [{
-    "js": ["script.js"],
-    "matches": ["*://*gitlab*/merge_requests/*"]
-  }]
+    "manifest_version": 3,
+    "name": "Are you sure you want to merge this request?",
+    "description": "Extension to prevent unwanted clicks on MERGE button at Gitlab merge requests :)",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "script.js"
+            ],
+            "matches": [
+                "https://gitlab.com/*/merge_requests/*",
+                "https://gitlab.recruitis.io/*/merge_requests/*"
+            ],
+            "run_at": "document_end"
+        }
+    ]
 }
