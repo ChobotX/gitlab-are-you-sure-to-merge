@@ -5,6 +5,6 @@
   "version": "1.0",
   "content_scripts": [{
     "js": ["script.js"],
-    "matches": ["*gitlab*/merge_requests/*"]
+    "matches": ["*://*gitlab*/merge_requests/*"]
   }]
 }
