@@ -16,8 +16,9 @@ const updateButtons = () => {
     if (mergeButton) {
         mergeButton.parentNode.style.backgroundColor = 'red';
         mergeButton.addEventListener('click', (e) => {
-            if (!confirm('Are you sure?')) {
+            if (!confirm('Are you sure you want to merge this?')) {
                 e.preventDefault();
+                e.stopPropagation();
             }
         });
     } else {
@@ -27,4 +28,8 @@ const updateButtons = () => {
     }
 };
 
-updateButtons();
+chrome.storage.sync.get('gitlabMergeRequestUrl', ({gitlabMergeRequestUrl}) => {
+    if (gitlabMergeRequestUrl && new RegExp(gitlabMergeRequestUrl).test(window.location.href)) {
+        updateButtons();
+    }
+});

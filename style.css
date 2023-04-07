@@ -1,0 +1,36 @@
+body {
+    width: 350px;
+    background: linear-gradient(60deg, #E24329 0%,#FCA326 50%,#FC6D26 100%);
+    color: white;
+}
+
+small {
+    font-size: 10px;
+}
+
+label {
+    font-weight: 500;
+}
+
+input.loading {
+    background: linear-gradient(to right, #fff 8%, #87cdff 18%, #fff 33%);
+    background-size: 800px 104px;
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+input.success {
+    background: #c7efb5 !important;
+}
+
+input.error {
+    background: #f7b5b5 !important;
+}

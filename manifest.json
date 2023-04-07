@@ -1,20 +1,33 @@
 {
     "manifest_version": 3,
-    "name": "Are you sure you want to merge this request?",
+    "name": "Are you sure you want to merge this?",
     "description": "Extension to prevent unwanted clicks on MERGE button at Gitlab merge requests :)",
+    "author": "Ondřej Cháb",
+    "homepage_url": "https://github.com/ChobotX/gitlab-are-you-sure-to-merge",
+    "icons": {
+        "16": "embarrassed_gitlab.png",
+        "32": "embarrassed_gitlab.png",
+        "48": "embarrassed_gitlab.png",
+        "128": "embarrassed_gitlab.png"
+    },
     "version": "1.0",
     "permissions": [
         "tabs",
-        "activeTab"
+        "activeTab",
+        "storage",
+        "scripting"
     ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "embarrassed_gitlab.png"
+    },
     "content_scripts": [
         {
             "js": [
                 "script.js"
             ],
             "matches": [
-                "https://gitlab.com/*/merge_requests/*",
-                "https://gitlab.recruitis.io/*/merge_requests/*"
+                "<all_urls>"
             ],
             "run_at": "document_end"
         }
