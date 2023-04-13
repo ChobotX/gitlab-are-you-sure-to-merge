@@ -19,6 +19,7 @@ const updateButtons = () => {
             if (!confirm('Are you sure you want to merge this?')) {
                 e.preventDefault();
                 e.stopPropagation();
+                window.location.reload();
             }
         });
     } else {
