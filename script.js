@@ -1,4 +1,4 @@
-const maxAttempts = 30;
+const maxAttempts = 100;
 let attempts = 0;
 
 const updateButtons = () => {
@@ -30,6 +30,7 @@ const updateButtons = () => {
 };
 
 chrome.storage.sync.get('gitlabMergeRequestUrl', ({gitlabMergeRequestUrl}) => {
+    console.log(gitlabMergeRequestUrl, window.location.href);
     if (gitlabMergeRequestUrl && new RegExp(gitlabMergeRequestUrl).test(window.location.href)) {
         updateButtons();
     }

@@ -6,6 +6,7 @@ const restoreOptions = () => {
         if (!gitlabMergeRequestUrl) {
             gitlabMergeRequestUrl = DEFAULT_REGEX;
             input.classList.add('error');
+            saveOptions(input);
         }
         input.value = gitlabMergeRequestUrl;
     });
